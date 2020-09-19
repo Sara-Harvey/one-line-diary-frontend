@@ -11,7 +11,30 @@
   </head>
 
   <body>
-    <p>Hello world!</p>
+
+	<div class="form-container">
+
+	  <form id="create-entry-form" style="">
+	    <h3>Create a an entry!</h3>
+	    <input id='input-date' type="text" name="date" value="" placeholder="Date" class="input-text">
+	    <input id='input-content' type="text" name="content" value="" placeholder="To remember" class="input-text">
+	    <br><br>
+
+<!-- #select grabs the type associated with the entry. Ideally, this would all be JS, as a card, etc. but it's fine for a small project. -->
+	
+		<p>Assign a type:</p>
+	    <select id="types" name="types">
+	      <option value="1">event</option>
+	      <option value="2">quote</option>
+	    </select>
+	    <br><br>
+
+	    <input id= 'create-button' type="submit" name="submit" value="Create new entry" class="submit">
+	  </form>
+	</div><BR><BR>
+
+    <div id="entries-container"></div> 
+
 
   </body>
 
