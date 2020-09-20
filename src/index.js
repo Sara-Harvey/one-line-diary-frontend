@@ -14,11 +14,11 @@ function getEntries() {
     .then(res => res.json())
     .then(entries => {
       entries.data.forEach(entry => {
-      let newEntry = new Entry(entry.id, entry.attributes)
+      const newEntry = new Entry(entry.id, entry.attributes)
 
-      document.querySelector('#entry-container').innerHTML += newEntry.renderEntryCard();
+      document.querySelector('#entries-container').innerHTML += newEntry.renderEntryCard();
     })
-      .catch(err => console.log(err))
+     // .catch(err => console.log(err))
   })
 }
 
@@ -32,6 +32,7 @@ function createFormHandler(e) {
 
 function postFetch(date, content, type_id) {
   const bodyData = {date, content, type_id}
+
   fetch(endPoint, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
@@ -40,6 +41,8 @@ function postFetch(date, content, type_id) {
   .then(response => response.json())
   .then(entry => {
     const entryData = entry.data
-    render(entryData)
+    
+    let newEntry = new Entry(entryData, entryData.attributes)
+    document.querySelector('#entries-container').innerHTML += newEntry.renderEntryCard()
   })
 }

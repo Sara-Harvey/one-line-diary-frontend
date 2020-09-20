@@ -25,5 +25,8 @@ class Entry {
   }
 }
 
+//  static findById(id) {
+//    return this.all.find(entry => entry.id === id);
+
 // global scope, outside the class
 Entry.all = [];
