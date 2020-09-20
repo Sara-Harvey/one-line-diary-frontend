@@ -3,9 +3,9 @@ const endPoint = "http://localhost:3000/entries";
 document.addEventListener('DOMContentLoaded', () => {
    getEntries()
 
-  const createSyllabusForm = document.querySelector("#create-entry-form")
+  const createEntryForm = document.querySelector("#create-entry-form")
 
-  createSyllabusForm.addEventListener("submit", (e) => 
+createEntryForm.addEventListener("submit", (e) => 
     createFormHandler(e))
   })
 
@@ -13,20 +13,13 @@ function getEntries() {
   fetch(endPoint)
     .then(res => res.json())
     .then(entries => {
-
       entries.data.forEach(entry => {
-        const entryMarkup = `
-          <div data-id=${entry.id}>
-            <p>${entry.attributes.date}</p>
-            <p>${entry.attributes.content}</p>
-            <p>${entry.attributes.type.name}</p>
-            <button data-id=${entry.id}>edit</button>
-          </div>
-          <br><br>`;
+      let newEntry = new Entry(entry.id, entry.attributes)
 
-          document.querySelector('#entries-container').innerHTML += entryMarkup
-      })
+      document.querySelector('#entry-container').innerHTML += newEntry.renderEntryCard();
     })
+      .catch(err => console.log(err))
+  })
 }
 
 function createFormHandler(e) {
@@ -46,16 +39,7 @@ function postFetch(date, content, type_id) {
     })
   .then(response => response.json())
   .then(entry => {
-    const entryData = entry.data.attributes
-    const entryMarkup = `
-    <div data-id=${entry.id}>
-     <p>${entryData.date}</p>
-     <p>${entryData.content}</p>
-     <p>${entryData.type.name}</p>
-     <button data-id=${entryData.id}>edit</button>
-    </div>
-    <br><br>`;
-
-    document.querySelector('#entries-container').innerHTML += entryMarkup;
+    const entryData = entry.data
+    render(entryData)
   })
 }
