@@ -6,9 +6,8 @@
     
     <title>One-Line Diary</title>
 
-    <script type="text/javascript" src="src/entry.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
-
+    <script type="text/javascript" src="src/entry.js"></script>
     <link href="index.css" rel="stylesheet">
   </head>
 
@@ -24,8 +23,8 @@
 
 <!-- #select grabs the type associated with the entry. Ideally, this would all be JS, as a card, etc. but it's fine for a small project. -->
 	
-		<p>Assign a type:</p>
-	    <select id="types" name="types">
+		<p>Assign a category:</p>
+	    <select id="categories" name="categories">
 	      <option value="1">event</option>
 	      <option value="2">quote</option>
 	    </select>
@@ -35,6 +34,7 @@
 	  </form>
 	</div><BR><BR>
 
+	<div id="update-entry"></div><br><br>
     <div id="entries-container"></div> 
 
 
