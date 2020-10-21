@@ -25,7 +25,7 @@ class Entry {
         <h3>Edit an entry</h3>
 
         <label>Date</label>
-        <input id='input-date' type="text" name="date" value="${this.date}" class="input-text">
+        <input id='input-date' type="date" name="date" value="${this.date}" class="input-text">
         <br><br>
 
         <label>Content</label>

@@ -2,8 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
     <title>One-Line Diary</title>
 
     <script type="text/javascript" src="src/index.js"></script>
@@ -13,18 +12,20 @@
 
   <body>
 
+  	<h1>The One-Line Diary</h1>
+  	<div id="todays-date"></div>
+
 	<div class="form-container">
 
 	  <form id="create-entry-form" style="">
-	    <h3>Create a an entry!</h3>
-	    <input id='input-date' type="text" name="date" value="" placeholder="Date" class="input-text">
-	    <input id='input-content' type="text" name="content" value="" placeholder="To remember" class="input-text">
-	    <br><br>
-
-<!-- #select grabs the type associated with the entry. Ideally, this would all be JS, as a card, etc. but it's fine for a small project. -->
+	    <h3>Write an entry:</h3>
+		<input id='input-date' type="date" name="date" value="" placeholder="Date" class="input-text">
+	    <input id='input-content' type="text" name="content" value="" placeholder="What to remember" class="input-text">
+	    <br>
 	
-		<p>Assign a category:</p>
+		<p>Add a category:</p>
 	    <select id="categories" name="categories">
+	      <option value="0">Select one</option>
 	      <option value="1">event</option>
 	      <option value="2">quote</option>
 	    </select>
@@ -32,11 +33,20 @@
 
 	    <input id= 'create-button' type="submit" name="submit" value="Create new entry" class="submit">
 	  </form>
-	</div><BR><BR>
+	</div><BR>
+
+	<h3>See entries by category:</h3>
+        <select id="entriesByCat" onchange="entryCategory()">
+          <option value="0">Select one</option>
+          <option value="1">event</option>
+          <option value="2">quote</option>
+        </select>
+    <br><br>
+
+	<div id="demo"></div>
 
 	<div id="update-entry"></div><br><br>
     <div id="entries-container"></div> 
-
 
   </body>
 

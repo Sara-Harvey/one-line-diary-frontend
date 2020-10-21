@@ -1,12 +1,20 @@
 const endPoint = "http://localhost:3000/entries"
 
 document.addEventListener('DOMContentLoaded', () => {
-   getEntries()
+   getEntries(); todaysDate();
 
-  const createSyllabusForm = document.querySelector("#create-entry-form")
-  createSyllabusForm.addEventListener("submit", (e) => createFormHandler(e))
+
+  const createEntryForm = document.querySelector("#create-entry-form")
+  createEntryForm.addEventListener("submit", (e) => createFormHandler(e))
   const entryContainer = document.querySelector("#entries-container")
+
 })
+
+function todaysDate() {
+  var today = new Date();
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  document.getElementById("todays-date").innerHTML = 'Today is ' + date;
+}
 
 function getEntries() {
   fetch(endPoint)
@@ -39,6 +47,26 @@ function deleteEntries(elmnt) {
         .then(function (json) {
             elmnt.parentNode.remove(elmnt);           
         })
+    }
+
+function entryCategory() {
+    const x = document.getElementById("entriesByCat");    
+    const i = x.selectedIndex;
+    const entries = Entry.all  
+    
+    const eventEntries = entries.filter(function (entry) {
+      return entry.category_id = x.options[i].value;
+      });
+
+    var eventEntryNames = eventEntries.map(function(entry) {
+      return entry.content;
+    });
+    document.getElementById("demo").innerHTML = eventEntryNames.join('<BR>');
+  }
+
+
+function findByDate() {
+  document.getElementById("find-by-date").innerHTML = "All the dates";
 }
 
 function createFormHandler(e) {
@@ -76,7 +104,6 @@ function updateFormHandler(e) {
   const category_id = e.target.querySelector('#categories').value;
   //const category_id = parseInt(e.target.querySelector('#categories').value);
   patchEntry(entry, date, content, category_id)
-  // the new content is considered THE content at this point
 }
 
 function patchEntry(entry, date, content, category_id) {
@@ -93,3 +120,4 @@ function patchEntry(entry, date, content, category_id) {
     // our backend responds with the updated syllabus instance represented as JSON
     .then(updatedEntry => console.log(updatedEntry));
 }
+
