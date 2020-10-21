@@ -55,18 +55,12 @@ function entryCategory() {
     const entries = Entry.all  
     
     const eventEntries = entries.filter(function (entry) {
-      return entry.category_id = x.options[i].value;
-      });
-
-    var eventEntryNames = eventEntries.map(function(entry) {
+      return entry.category.id == x.options[i].value;
+    });
+    const eventEntryNames = eventEntries.map(function (entry) {
       return entry.content;
     });
     document.getElementById("demo").innerHTML = eventEntryNames.join('<BR>');
-  }
-
-
-function findByDate() {
-  document.getElementById("find-by-date").innerHTML = "All the dates";
 }
 
 function createFormHandler(e) {
