@@ -3,7 +3,6 @@ const endPoint = "http://localhost:3000/entries"
 document.addEventListener('DOMContentLoaded', () => {
    getEntries(); todaysDate();
 
-
   const createEntryForm = document.querySelector("#create-entry-form")
   createEntryForm.addEventListener("submit", (e) => createFormHandler(e))
   const entryContainer = document.querySelector("#entries-container")
@@ -38,6 +37,9 @@ function editEntries(elmnt) {
 function deleteEntries(elmnt) {
 	const id = elmnt.dataset.id;
 	const entry = Entry.findById(id);
+  
+  var result = confirm("Are you sure you want to delete?");
+  if (result) {
 
 	let delObj = { method: "DELETE" }
 	fetch(`http://localhost:3000/entries/${entry.id}`, delObj)
@@ -48,6 +50,7 @@ function deleteEntries(elmnt) {
             elmnt.parentNode.remove(elmnt);           
         })
     }
+  }
 
 function entryCategory() {
     const x = document.getElementById("entriesByCat");    
@@ -60,7 +63,7 @@ function entryCategory() {
     const eventEntryNames = eventEntries.map(function (entry) {
       return entry.content;
     });
-    document.getElementById("demo").innerHTML = eventEntryNames.join('<BR>');
+    document.getElementById("see-by-entry").innerHTML = eventEntryNames.join('<BR>');
 }
 
 function createFormHandler(e) {
