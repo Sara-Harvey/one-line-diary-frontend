@@ -38,7 +38,7 @@ function deleteEntries(elmnt) {
 	const id = elmnt.dataset.id;
 	const entry = Entry.findById(id);
   
-  var result = confirm("Are you sure you want to delete?");
+  const result = confirm("Are you sure you want to delete?");
   if (result) {
 
 	let delObj = { method: "DELETE" }
