@@ -1,7 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC+700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('AmaticSC-Regular.woff2') format('woff2'),
+        url('AmaticSC-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
+@font-face {
+    font-family: 'Amatic SC';
+    src: url('AmaticSC-Bold.woff2') format('woff2'),
+        url('AmaticSC-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('Roboto-Regular.woff2') format('woff2'),
+        url('Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 body {
   padding-top: 2rem;
@@ -14,75 +36,81 @@ body {
 }
 
 h1 {
-	font-family: Amatic SC, sans-serif;
-	font-size: 2.75em;
+    font-family: Amatic SC, sans-serif;
+    font-size: 2.75em;
 }
 
 h3 {
-	font-family: Amatic SC, sans-serif;
-	color: white;
-	font-weight: bold;
+    font-family: Amatic SC, sans-serif;
+    color: white;
+    font-weight: bold;
 }
 
 #todays-date {
-	font-family: Roboto, sans-serif;
-	font-size: 1em;
-	color: #d2a86e;
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+    color: #d2a86e;
 }
 
 /* new entry form */
 .form-container {
-	border-radius: 8px 8px;
-	padding: 5pt 10pt 10pt 10pt;
-	background: #d2a86e;
+    border-radius: 8px 8px;
+    padding: 5pt 10pt 10pt 10pt;
+    background: #d2a86e;
 }
 
-#input-date-1, #input-content-1, #categories, #entriesByCat{
-	color: gray;
-	border: none; 
-	border-radius: 4px;
+#input-date, #input-content, #entriesByCat {
+    color: gray;
+    border: none; 
+    border-radius: 4px;
+}
+
+#categories {
+    color: gray;
+    border-radius: 4px;
 }
 
 #create-button {
-	font-family: Amatic SC, sans-serif;
-	font-size: 1.5em;
+    font-family: Amatic SC, sans-serif;
+    font-size: 1.5em;
     font-weight: bold;
-	color: black;
+    color: black;
     background-color: #fae4b1;
-	padding: -2px 22px;
-	border-radius: 8px 8px;
-	border-style: solid;
-	border-width: 1.25pt;
-	border-color: white;
+    padding: -2px 22px;
+    border-radius: 8px 8px;
+    border-style: solid;
+    border-width: 1.5pt;
+    border-color: white;
 }
 
 /* see entries by category */
 .category-container {
-	color: white;
-	font-weight: bold;
-	background-color: #edd191;
-	padding: 5pt 10pt 10pt 10pt;
-	border-radius: 8px 8px;
+    color: white;
+    font-weight: bold;
+    background-color: #edd191;
+    padding: 5pt 10pt 10pt 10pt;
+    border-radius: 8px 8px;
 }
 
 /* entries by category list */
-#see-by-entry {
-	font-family: Amatic SC, sans-serif;
-	font-weight: bold;
-	font-size: 1.5em;
+#see-by-entry, label {
+    font-family: Amatic SC, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
 }
 
 /* all entries */
 #edit-button, #delete-button {
-	color: black;
-    font-size: .75em;
+    font-family: Amatic SC, sans-serif;
+    color: black;
+    font-size: 1.3em;
     font-weight: bold;
-    padding: -2px 22px;
+    padding: -2px 15px;
     border-radius: 8px 8px;
     background-color: white;
     border-style: solid;
     border-color: #d2a86e;
-    border-width: 1.25pt;
+    border-width: 1.45pt;
 }
 
 #delete-button {
@@ -96,13 +124,12 @@ h3 {
 }
 
 #input-date, #input-content, #input-category {
-	border-radius: 4px; 
-	border-style: solid; 
-	border-width: thin;
+    border-radius: 4px; 
+    border-style: solid; 
+    border-width: thin;
 }
 
 .footer {
   background-color: #edd191;
   height: 50pt;
 }
-
