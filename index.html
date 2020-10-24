@@ -8,32 +8,59 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>One-Line Diary</title>
 
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer/">
+
 	<!-- Bootstrap-4 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-	<!-- JS Project Tags -->
+	  <!-- JS Project Tags -->
     <script type="text/javascript" src="src/index.js"></script>
     <script type="text/javascript" src="src/entry.js"></script>
 
-	<!-- Custom styles for this template -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+	  <!-- Custom styles for this template -->
     <link href="index.css" rel="stylesheet">
   </head>
+
 
   <body>
 
     <main role="main" class="container">
       <div class="starter-template">
       	<h1>The One-Line Diary</h1>
-      	<div id="todays-date" class="lead"></div>
+      	<div id="todays-date"></div>
       </div>
 
       <!-- add new entry -->
     	<div class="form-container">
 
-    	  <form id="create-entry-form">
-    	    <h3 style="display: inline">Add a new entry:</h3> &nbsp &nbsp
-          	<input id='input-date-1' type="date" name="date" value="" class="input-text" style="color: gray;"> &nbsp
-    	    <input id='input-content-1' type="text" name="content" value="" placeholder="What to remember" class="input-text">
+    	  <form id="create-entry-form" style="">
+    	    <h3 style="display: inline">Add a new entry: &nbsp &nbsp </h3> 
+          <input id='input-date' type="date" name="date" value="" class="input-text" style="color: gray; border: none;">
+    	    <input id='input-content' type="text" name="content" value="" placeholder="What to remember" class="input-text" style="border: none;">
 
     	    <input id= 'create-button' type="submit" name="submit" value="Create" class="submit" style="float: right"><BR>
 
@@ -48,7 +75,7 @@
 
       <!-- see entries by category -->
       <div class="category-container">
-      <h3 style="display: inline">Entries by category:</h3>&nbsp
+      <h3 style="display: inline">See entries by category:</h3>&nbsp
           <select id="entriesByCat" onchange="entryCategory()">
             <option value="0">Select one</option>
             <option value="1">event</option>
@@ -65,10 +92,11 @@
 
   	<footer class="footer mt-auto py-3">
   	  <div class="container">
-  	    <span class="text-muted">2020</span>
+  	    <span class="text-muted">©2020</span>
   	  </div>
   	</footer>
 
   </body>
 
 </html>
+
