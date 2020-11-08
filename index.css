@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Amatic SC';
-    src: url('AmaticSC-Regular.woff2') format('woff2'),
-        url('AmaticSC-Regular.woff') format('woff');
+    src: url('fonts/AmaticSC-Regular.woff2') format('woff2'),
+        url('fonts/AmaticSC-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Amatic SC';
-    src: url('AmaticSC-Bold.woff2') format('woff2'),
-        url('AmaticSC-Bold.woff') format('woff');
+    src: url('fonts/AmaticSC-Bold.woff2') format('woff2'),
+        url('fonts/AmaticSC-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('Roboto-Regular.woff2') format('woff2'),
-        url('Roboto-Regular.woff') format('woff');
+    src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+        url('fonts/Roboto-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -28,6 +28,10 @@
 body {
   padding-top: 2rem;
   font-family: Roboto, sans-serif;
+}
+
+li {
+  list-style: none;
 }
 
 .starter-template {
@@ -47,7 +51,6 @@ h3 {
 }
 
 #todays-date {
-    font-family: Roboto, sans-serif;
     font-size: 1em;
     color: #d2a86e;
 }
@@ -59,15 +62,14 @@ h3 {
     background: #d2a86e;
 }
 
-#input-date, #input-content, #entriesByCat {
+#create-entry_form, #categories, #entriesByCat {
     color: gray;
     border: none; 
     border-radius: 4px;
 }
 
 #categories {
-    color: gray;
-    border-radius: 4px;
+    border: 2pt;
 }
 
 #create-button {
@@ -115,12 +117,6 @@ h3 {
 
 #delete-button {
     background-color: #fae4b1;
-}
-
-#date, #content, #category {
-    font-family: Amatic SC, sans-serif; 
-    font-size: 1.25em; 
-    
 }
 
 #input-date, #input-content, #input-category {

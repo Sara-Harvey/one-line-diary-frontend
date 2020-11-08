@@ -9,16 +9,15 @@ class Entry {
 
   renderEntryCard() {
     return `
-      <div data-id=${this.id}>
+      <li><div data-id=${this.id}>
         <p style="font-family: Amatic SC, sans-serif; font-size: 2em; display: inline;">
         ${this.date}&nbsp &nbsp &nbsp${this.content} — ${this.category.name} &nbsp &nbsp &nbsp </p>
         
         <button id="edit-button" data-id=${this.id} onclick="editEntries(this)">
-          edit</button>
-        
+          edit</button>       
         <button id="delete-button" data-id=${this.id} onclick="deleteEntries(this)">
           delete</button>
-        </div>`
+        </div></li>`
   }
 
   renderUpdateForm() {
@@ -41,7 +40,8 @@ class Entry {
         </select>
         <br><br>
 
-        <input id='edit-button' type="submit" name="submit" value="Edit this entry" class="submit" style="background-color: #fae4b1;">
+        <input id='edit-button' type="submit" name="submit" value="Edit this entry" class="submit" 
+        style="background-color: #fae4b1;">
       </form>
     `;
     }
@@ -52,3 +52,4 @@ class Entry {
 }
 
 Entry.all = [];
+
